@@ -1,6 +1,6 @@
 # sql_analysis_series
 ----------------------
-1.Algorithm Performance
+Algorithm Performance
 ------------------------
 
 Meta/Facebook is developing a search algorithm that will allow users to search through their post history. You have been assigned to evaluate the performance of this algorithm.
