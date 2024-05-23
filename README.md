@@ -19,3 +19,9 @@ As a search ID can contain more than one search term, select the highest rating 
 
 
 Example: The search_id 1 was clicked (clicked = 1) and its position is outside of the top 3 positions (search_results_position = 5), therefore its rating is 2.
+
+Average Salaries
+----------------
+Compare each employee's salary with the average salary of the corresponding department.
+Output the department, first name, and salary of employees along with the average salary of that department.
+
