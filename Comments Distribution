@@ -1,0 +1,15 @@
+Comments Distribution
+----------------------
+SELECT comment_count,
+       count(a.id) AS user_count
+FROM
+  (SELECT id,
+          count(*) AS comment_count
+   FROM fb_users 
+   INNER JOIN fb_comments  ON id = user_id
+   WHERE created_at BETWEEN '2020-01-01' AND '2020-01-31'
+     AND joined_at BETWEEN '2018-01-01' AND '2020-12-31'
+     AND datediff(created_at, joined_at) >= 0
+   GROUP BY id) a
+GROUP BY comment_count
+ORDER BY comment_count ASC;
