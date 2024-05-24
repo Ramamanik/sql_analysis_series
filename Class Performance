@@ -1,0 +1,4 @@
+with compared_score as(
+           select student, sum(assignment1+assignment2+assignment3) as total_score from
+           box_scores group by 1)
+select max(total_score)-min(total_score) as difference_in_scores from compared_score ;
