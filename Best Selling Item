@@ -1,0 +1,10 @@
+with cte as
+        (select date_format(invoicedate,'%m') as "mth",
+        description,
+        sum(unitprice * quantity)as "tot_qty",
+        rank()over(partition by date_format(invoicedate,'%m')
+        order by sum(unitprice * quantity) desc)as "rnk"
+from online_retail 
+group by 1,2 
+order by 1,2) 
+select mth,description,tot_qty from cte where rnk=1;
