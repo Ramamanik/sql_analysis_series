@@ -1,0 +1,5 @@
+select 'wacky.txt' AS filename,
+    (SELECT STRING_AGG(word, ' ' ORDER BY word)
+     FROM unnest(string_to_array(contents, ' ')) AS word) AS sorted_contents
+from google_file_store 
+where filename='final.txt'
