@@ -1,0 +1,21 @@
+SELECT sq1.name,
+       sq1.second_last_rating,
+       lifetime_rating,
+       ABS(sq1.second_last_rating - lifetime_rating) AS variance
+FROM
+  (SELECT name,
+          rating AS second_last_rating,
+          row_number() OVER (PARTITION BY name
+                             ORDER BY id DESC) AS rk
+   FROM nominee_filmography
+   WHERE rating IS NOT NULL AND role_type = 'Normal Acting'
+   GROUP BY name,
+            rating,
+            id) AS sq1
+JOIN
+  (SELECT name,
+          avg(rating) AS lifetime_rating
+   FROM nominee_filmography
+   WHERE role_type = 'Normal Acting'
+   GROUP BY name) AS sq2 ON sq1.name = sq2.name
+WHERE rk = 2;
