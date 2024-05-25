@@ -1,0 +1,14 @@
+SELECT a.department,
+       a.id AS employee_id,
+       a.salary AS employee_salary,
+       b.salary AS manager_salary,
+       ROUND(AVG(a.salary) OVER(PARTITION BY a.department)) AS avg_employee_salary
+FROM employee_o a
+JOIN employee_o b ON a.manager_id = b.id
+AND a.id <> b.id
+GROUP BY a.department,
+         a.id,
+         a.salary,
+         b.salary
+ORDER BY a.department,
+         a.salary DESC
