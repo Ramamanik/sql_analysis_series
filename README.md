@@ -73,6 +73,14 @@ You have been tasked with creating a table that compares an employee's salary to
 
 It is expected that the department manager's salary and the average salary of employee's from that department are in their own separate column.
 
+Differences In Movie Ratings
+----------------------------
+Calculate the average lifetime rating and rating from the movie with second biggest id across all actors and all films they had acted in. Remove null ratings from the calculation.
+Role type is "Normal Acting". Output a list of actors, their average lifetime rating, rating from the film with the second biggest id (use id column), and the absolute difference between the two ratings.
+
+
+
+
 
 Order the employee's salary from highest to lowest based on their department.
 Your output should contain the department, employee id, salary of that employee, salary of that employee's manager and the average salary from employee's within that department rounded to the nearest whole number.
