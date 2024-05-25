@@ -1,0 +1,17 @@
+WITH CTE AS
+(
+    SELECT 
+    (ROW_NUMBER() OVER(ORDER BY page_number)-1*2) AS left_page,
+    (ROW_NUMBER() OVER(ORDER BY page_number)-1*2) + 1 AS right_page
+    FROM cookbook_titles
+)
+
+SELECT
+    CTE.left_page,
+    c1.title,
+    c2.title
+FROM CTE
+LEFT JOIN cookbook_titles c1
+    ON CTE.left_page = c1.page_number
+LEFT JOIN cookbook_titles c2
+    ON CTE.right_page = c2.page_number
