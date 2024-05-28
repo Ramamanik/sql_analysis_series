@@ -1,0 +1,11 @@
+--Find all businesses whose lowest and highest inspection scores are different.
+ --Find business name lowest and highest scores of each business
+ --Order the result based on the business name in ascending order.
+select 
+      business_name,
+      min(inspection_score) as min_score,
+      max(inspection_score) as max_score 
+from sf_restaurant_health_violations 
+group by business_name 
+having min(inspection_score) <> max(inspection_score) 
+order by business_name asc;
