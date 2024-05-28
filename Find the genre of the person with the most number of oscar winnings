@@ -1,0 +1,13 @@
+--Find the genre of the person with the most number of oscar winnings.
+--If there are more than one person with the same number of oscar wins, return the first one in alphabetic order based on their name. Use the names as keys when joining the tables.
+
+SELECT TOP 1 info.top_genre
+FROM nominee_information info
+INNER JOIN (
+    SELECT 
+        nominee, 
+        COUNT(*) OVER (PARTITION BY nominee) as n_winnings
+    FROM oscar_nominees  
+    WHERE winner = 1
+) tmp ON tmp.nominee = info.name
+ORDER BY n_winnings DESC, nominee ASC;
