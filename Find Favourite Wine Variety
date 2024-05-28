@@ -1,0 +1,8 @@
+SELECT 
+taster_name, variety from
+(select taster_name, variety, count(variety) as n_tastings,
+max(count(variety)) over(partition by taster_name) as max_n_tastings 
+from winemag_p2 
+where taster_name is not null 
+group by 1,2 ) t
+where n_tastings = max_n_tastings
