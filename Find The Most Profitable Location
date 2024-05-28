@@ -1,0 +1,16 @@
+With avgDuration AS (
+SELECT location, ROUND(AVG(DATEDIFF(day, signup_start_date, signup_stop_date)* 1.0),3) AS meanDur 
+FROM signups 
+GROUP BY location
+),
+avgRevenue AS (
+SELECT location, AVG(amt * 1.0) AS avgTransactions 
+FROM  transactions INNER JOIN signups
+ON transactions.signup_id=signups.signup_id
+GROUP BY location
+)
+
+SELECT avgDuration.location, avgDuration.meanDur, avgRevenue.avgTransactions, (avgRevenue.avgTransactions/avgDuration.meanDur) AS ratio
+FROM avgDuration INNER JOIN avgRevenue
+ON avgDuration.location=avgRevenue.location
+ORDER BY (avgRevenue.avgTransactions/avgDuration.meanDur) DESC
