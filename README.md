@@ -100,3 +100,9 @@ Find the most profitable location. Write a query that calculates the average sig
 
 Your output should include the location, average duration, average transaction amount, and ratio. Sort your results from highest ratio to lowest.
 
+Find all businesses whose lowest and highest inspection scores are different
+----------------------------------------------------------------------------
+Find all businesses whose lowest and highest inspection scores are different.
+Output the corresponding business name and the lowest and highest scores of each business. HINT: you can assume there are no different businesses that share the same business name
+Order the result based on the business name in ascending order.
+
