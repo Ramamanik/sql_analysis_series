@@ -93,4 +93,10 @@ Find each taster's favorite wine variety.
 Consider that favorite variety means the variety that has been tasted by most of the time.
 Output the taster's name along with the wine variety.
 
+Find The Most Profitable Location
+---------------------------------
+Find the most profitable location. Write a query that calculates the average signup duration and average transaction amount for each location, and then compare these two measures together by taking the ratio of the average transaction amount and average duration for each location.
+
+
+Your output should include the location, average duration, average transaction amount, and ratio. Sort your results from highest ratio to lowest.
 
