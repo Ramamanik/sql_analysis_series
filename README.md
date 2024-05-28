@@ -87,4 +87,10 @@ File Contents Shuffle
 ---------------------
 Sort the words alphabetically in 'final.txt' and make a new file named 'wacky.txt'. Output the file contents in one column and the filename 'wacky.txt' in another column. Lowercase all the words. To simplify the question, there is no need to remove the punctuation marks.
 
+Find Favourite Wine Variety
+---------------------------
+Find each taster's favorite wine variety.
+Consider that favorite variety means the variety that has been tasted by most of the time.
+Output the taster's name along with the wine variety.
+
 
