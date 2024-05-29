@@ -1,0 +1,9 @@
+with cte as (select e.id,
+       case when b.bonus_amount>=1 then '1' else '0' 
+       end as has_bonus 
+from employee e left join bonus b on e.id = b.worker_ref_id)
+
+
+
+select has_bonus,count(id) as n_employees from 
+cte group by has_bonus ;
