@@ -111,3 +111,7 @@ Find all businesses whose lowest and highest inspection scores are different.
 Output the corresponding business name and the lowest and highest scores of each business. HINT: you can assume there are no different businesses that share the same business name
 Order the result based on the business name in ascending order.
 
+Find the number of employees who received the bonus and who didn't
+------------------------------------------------------------------
+Find the number of employees who received the bonus and who didn't. Bonus values in employee table are corrupted so you should use  values from the bonus table. Be aware of the fact that employee can receive more than one bonus.
+Output value inside has_bonus column (1 if they had bonus, 0 if not) along with the corresponding number of employees for each.
