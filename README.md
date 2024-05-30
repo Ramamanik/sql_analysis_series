@@ -125,5 +125,8 @@ Find the top 5 least paid employees for each job title
 Find the top 5 least paid employees for each job title.
 Output the employee name, job title and total pay with benefits for the first 5 least paid employees. Avoid gaps in ranking.
 
-
+Find the variance and the standard deviation of scores that have grade A
+-------------------------------------------------------------------------
+Find the variance of scores that have grade A using the formula AVG((X_i - mean_x) ^ 2).
+Output the result along with the corresponding standard deviation.
 
