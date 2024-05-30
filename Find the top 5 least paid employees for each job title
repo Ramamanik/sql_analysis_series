@@ -1,0 +1,6 @@
+with cte as
+          (select employeename,jobtitle,totalpaybenefits from sf_public_salaries)
+         select employeename,jobtitle,totalpaybenefits from 
+         (select cte.*,dense_rank() over(partition by jobtitle order by totalpaybenefits) as rnk  
+         from cte)t where t.rnk<=5;          
+          
