@@ -120,3 +120,10 @@ Year Over Year Churn
 --------------------
 Find how the number of drivers that have churned changed in each year compared to the previous one. Output the year (specifically, you can use the year the driver left Lyft) along with the corresponding number of churns in that year, the number of churns in the previous year, and an indication on whether the number has been increased (output the value 'increase'), decreased (output the value 'decrease') or stayed the same (output the value 'no change').
 
+Find the top 5 least paid employees for each job title
+------------------------------------------------------
+Find the top 5 least paid employees for each job title.
+Output the employee name, job title and total pay with benefits for the first 5 least paid employees. Avoid gaps in ranking.
+
+
+
