@@ -1,0 +1,5 @@
+with cte as
+        (select cast(score as float),avg(cast(score as float)) over(partition by grade)as av_score
+           from los_angeles_restaurant_health_inspections where grade= 'A')
+           
+           select avg((score -av_score)* (score -av_score)) as variance, SQRT(avg((score -av_score)* (score -av_score))) as std  from cte;
