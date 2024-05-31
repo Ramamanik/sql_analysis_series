@@ -1,0 +1,4 @@
+with cte as
+         (select *,row_number()over()as rn from worker)
+         select worker_id,first_name,last_name,salary,joining_date,department from cte where rn<=(select count(*)/2 from worker);
+         
