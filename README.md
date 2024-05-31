@@ -130,3 +130,7 @@ Find the variance and the standard deviation of scores that have grade A
 Find the variance of scores that have grade A using the formula AVG((X_i - mean_x) ^ 2).
 Output the result along with the corresponding standard deviation.
 
+Finding Updated Records
+-----------------------
+We have a table with employees and their salaries, however, some of the records are old and contain outdated salary information. Find the current salary of each employee assuming that salaries increase each year. Output their id, first name, last name, department ID, and current salary. Order your list by employee ID in ascending order.
+
