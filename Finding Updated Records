@@ -1,0 +1,5 @@
+with cte as 
+        (select id,first_name, last_name, department_id,salary, 
+        max(salary) over(partition by id order by id)as max_s
+         from ms_employee_salary)
+select id,first_name, last_name, department_id,max_s from cte group by id,first_name, last_name, department_id,max_s order by id;
