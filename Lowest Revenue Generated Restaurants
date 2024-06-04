@@ -1,0 +1,24 @@
+WITH CTE1 AS(
+SELECT
+    restaurant_id,
+    SUM(order_total) AS total_revenue
+FROM
+    doordash_delivery
+WHERE
+    EXTRACT(month FROM customer_placed_order_datetime) = 5
+GROUP BY
+    restaurant_id
+ORDER BY
+    total_revenue DESC
+)
+, CTE2 AS(
+SELECT PERCENTILE_CONT(0.02) WITHIN GROUP(ORDER BY total_revenue) AS perc
+FROM CTE1
+)
+
+SELECT 
+    restaurant_id,
+    total_revenue
+FROM CTE1,CTE2
+WHERE
+    total_revenue <= perc
