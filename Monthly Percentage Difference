@@ -1,0 +1,18 @@
+WITH CTE AS(
+SELECT
+    to_char(created_at, 'YYYY-MM') AS year_month,
+    SUM(value) AS curr_value,
+    LAG(SUM(value),1) OVER(ORDER BY to_char(created_at, 'YYYY-MM')) AS prev_value
+FROM
+    sf_transactions
+GROUP BY
+    year_month
+ORDER BY
+    year_month
+)
+
+SELECT
+    year_month,
+    ROUND(((curr_value - prev_value)/ prev_value* 100),2) AS perc
+FROM
+    CTE
