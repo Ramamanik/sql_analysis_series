@@ -1,0 +1,66 @@
+WITH CTE AS(
+SELECT 
+    region_1 AS region,
+    variety,
+    price
+FROM 
+    winemag_pd
+WHERE 
+    region_1 IS NOT NULL AND variety IS NOT NULL AND price IS NOT NULL
+UNION
+SELECT 
+    region_2 AS region,
+    variety,
+    price
+FROM 
+    winemag_pd
+WHERE
+    region_2 IS NOT NULL AND variety IS NOT NULL AND price IS NOT NULL
+)
+,most_exp AS (
+SELECT
+    region,
+    variety,
+    price,
+    RANK() OVER(PARTITION BY region ORDER BY price DESC) AS price_1
+FROM CTE
+)
+,least_exp AS (
+SELECT
+    region,
+    variety,
+    price,
+    RANK() OVER(PARTITION BY region ORDER BY price) AS price_2
+FROM CTE
+)
+,
+most_exp1 AS (
+SELECT
+    DISTINCT region,
+    variety,
+    price
+FROM
+    most_exp
+WHERE 
+    price_1 =1
+)
+,
+least_exp1 AS (
+SELECT
+    DISTINCT region,
+    variety,
+    price
+FROM
+    least_exp
+WHERE 
+    price_2 =1
+)
+
+SELECT
+    m.region,
+    m.variety AS most_expensive_variety,
+    l.variety AS least_expensive_variety
+FROM
+    most_exp1 m, least_exp1 l
+WHERE
+    m.region = l.region
