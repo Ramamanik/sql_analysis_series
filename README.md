@@ -166,3 +166,7 @@ For example in the event of a tie for the cheapest wine your output should look 
 region             | most_expensive_variety | cheapest_variety
 region_name | expensive_variety             | cheap_variety_1
 region_name | expensive_variety             | cheap_variety_2
+
+Most Senior & Junior Employee
+-----------------------------
+Write a query to find the number of days between the longest and least tenured employee still working for the company. Your output should include the number of employees with the longest-tenure, the number of employees with the least-tenure, and the number of days between both the longest-tenured and least-tenured hiring dates
