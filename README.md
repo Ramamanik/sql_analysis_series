@@ -170,3 +170,31 @@ region_name | expensive_variety             | cheap_variety_2
 Most Senior & Junior Employee
 -----------------------------
 Write a query to find the number of days between the longest and least tenured employee still working for the company. Your output should include the number of employees with the longest-tenure, the number of employees with the least-tenure, and the number of days between both the longest-tenured and least-tenured hiring dates
+
+Negative Reviews in New Locations
+---------------------------------
+Find stores that were opened in the second half of 2021 with more than 20% of their reviews being negative. A review is considered negative when the score given by a customer is below 5. Output the names of the stores together with the ratio of negative reviews to positive ones.
+
+New And Existing Users
+----------------------
+Calculate the share of new and existing users for each month in the table. Output the month, share of new users, and share of existing users as a ratio.
+New users are defined as users who started using services in the current month (there is no usage history in previous months). Existing users are users who used services in current month, but they also used services in any previous month.
+Assume that the dates are all from the year 2020.
+HINT: Users are contained in user_id column
+
+Number Of Units Per Nationality
+-------------------------------
+Find the number of apartments per nationality that are owned by people under 30 years old.
+
+
+Output the nationality along with the number of apartments.
+
+
+Sort records by the apartments count in descending order.
+
+Number Of Acquisitions
+----------------------
+Find the number of acquisitions that occurred in each quarter of each year. Output the acquired quarter in YYYY-Qq format along with the number of acquisitions and order results by the quarters with the highest number of acquisitions first.
+
+
+
