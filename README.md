@@ -204,4 +204,8 @@ Product Transaction Count
 -------------------------
 Find the number of transactions that occurred for each product. Output the product name along with the corresponding number of transactions and order records by the product id in ascending order. You can ignore products without transactions.
 
+Quarterback With The Longest Throw
+----------------------------------
+Find the quarterback who threw the longest throw in 2016. Output the quarterback name along with their corresponding longest throw.
+The 'lg' column contains the longest completion by the quarterback.
 
