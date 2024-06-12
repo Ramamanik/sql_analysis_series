@@ -209,3 +209,8 @@ Quarterback With The Longest Throw
 Find the quarterback who threw the longest throw in 2016. Output the quarterback name along with their corresponding longest throw.
 The 'lg' column contains the longest completion by the quarterback.
 
+Rank guests based on their ages
+-------------------------------
+Rank guests based on their ages.
+Output the guest id along with the corresponding rank.
+Order records by the age in descending order.
