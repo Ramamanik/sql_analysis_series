@@ -227,3 +227,6 @@ Write a query that calculates the difference between the highest salaries found 
 The Most Popular Client_Id Among Users Using Video and Voice Calls
 -------------------------------------------------------------------
 Select the most popular client_id based on a count of the number of users who have at least 50% of their events from the following list: 'video call received', 'video call sent', 'voice call received', 'voice call sent'.
+Top 5 States With 5 Star Businesses
+-----------------------------------
+Find the top 5 states with the most 5 star businesses. Output the state name along with the number of 5-star businesses and order records by the number of 5-star businesses in descending order. In case there are ties in the number of businesses, return all the unique states. If two states have the same result, sort them in alphabetical order.
