@@ -1,0 +1,11 @@
+Question1:
+----------
+https://codebasics.io/bootcamp-practice-arenas/1/question/6
+
+solution
+--------
+with cte as
+       (select sa.*,st.StoreName,st.city from product_stores st inner join product_sales sa 
+             on st.StoreID = sa.StoreID where city ="Bangalore")
+
+             select StoreName,sum(Quantity) as TotalProductsSold  from cte group by StoreID;
