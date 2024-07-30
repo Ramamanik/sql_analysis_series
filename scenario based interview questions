@@ -9,3 +9,22 @@ with cte as
              on st.StoreID = sa.StoreID where city ="Bangalore")
 
              select StoreName,sum(Quantity) as TotalProductsSold  from cte group by StoreID;
+question 2
+----------
+https://codebasics.io/bootcamp-practice-arenas/1/question/9
+
+solution
+---------
+select distinct market from dim_customer where region='APAC' and customer='Atliq Exclusive';
+
+question 3
+----------
+https://codebasics.io/bootcamp-practice-arenas/1/question/11
+
+solutions
+---------
+with cte as
+         ( select segment,count(distinct( product_code)) product_code from dim_product 
+           group by segment order by count(distinct( product_code)) desc)  
+
+           select * from cte;
