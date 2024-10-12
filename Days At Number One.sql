@@ -2,7 +2,8 @@ Question asked in spotify
 -------------------------
         
 Find the number of days a US track has stayed in the 1st position for both the US and worldwide rankings on the same day. 
-Output the track name and the number of days in the 1st position. Order your output alphabetically by track name.
+Output the track name and the number of days in the 1st position. Order your output alphabetically by track name.If the region 'US' appears in dataset,
+it should be included in the worldwide ranking.
 
 My approach:
 -----------
@@ -18,7 +19,10 @@ Final Aggregation: In the outer query, I group the results by trackname and use 
 Sorting: Finally, we order the output alphabetically by trackname for clarity.
 
 
-If the region 'US' appears in dataset, it should be included in the worldwide ranking.select trackname,
+Solution:
+---------
+        
+        select trackname,
         max(n_days_on_n1_position) as n_days_on_n1_position
         from 
         (select us.trackname,
