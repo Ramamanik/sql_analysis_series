@@ -1,0 +1,39 @@
+IBM wants to reward employees who meet certain criteria. However, to ensure fairness, the following conditions must be met:
+
+
+•	The employee must have been with the company for at least 3 years
+•	The employee's department must have at least 5 employees
+•	The salary must be within the top 10% of salaries within the department
+
+https://platform.stratascratch.com/coding/10359-eligible-employees?code_type=1
+
+solution
+--------
+
+The output should include the Employee ID, Salary, and Department of the employees meeting the criteria.WITH tenure_filtered AS (
+    SELECT *
+    FROM employee_salaries
+    WHERE tenure >= 3
+),
+department_counts AS (
+    SELECT department, COUNT(*) AS dept_count
+    FROM tenure_filtered
+    GROUP BY department
+    HAVING COUNT(*) >= 5
+),
+top_10_percent_salaries AS (
+    SELECT department, 
+           PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY salary) AS salary_threshold
+    FROM tenure_filtered
+    GROUP BY department
+),
+eligible_employees AS (
+    SELECT tf.employee_id, tf.salary, tf.department
+    FROM tenure_filtered tf
+    INNER JOIN department_counts dc ON tf.department = dc.department
+    INNER JOIN top_10_percent_salaries tps ON tf.department = tps.department
+    WHERE tf.salary > tps.salary_threshold
+)
+SELECT employee_id, salary, department
+FROM eligible_employees
+ORDER BY employee_id;
